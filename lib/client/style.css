@@ -1,0 +1,268 @@
+body {
+	margin: 0;
+	padding: 0;
+	color: #777;
+	font-family: 'Lucida Grande', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+	font-size: 14px;
+}
+a {
+	border: none;
+	color: #ec7ca9;
+	text-decoration: none;
+}
+a:hover {
+	color: #e25c92;
+	text-decoration: underline;
+}
+a.enter {
+	display: inline-block;
+	background-color: #ec7ca9;
+	color: #fff;
+	padding: 10px 20px;
+	margin: 20px;
+	text-decoration: none;
+	border-radius: 2px;
+	font-size: 16px;
+}
+a.enter:hover {
+	background-color: #e25c92;
+}
+a.cant-enter {
+	display: inline-block;
+	background-color: #777;
+	color: #fff;
+	padding: 10px 20px;
+	margin: 20px;
+	text-decoration: none;
+	border-radius: 2px;
+	font-size: 16px;
+}
+div#mask {
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(255,255,255,0.8);
+	background-image: url(reichat.svg);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+div#home {
+	background-image: url(canvas);
+	background-position: left top;
+	background-size: cover;
+	background-repeat: no-repeat;
+	text-align: center;
+}
+div#home > div {
+	background-color: rgba(255,255,255,0.92);
+	padding: 60px 0 30px;
+}
+div#home h1 {
+	font-weight: normal;
+	font-size: 40px;
+	margin: 0 0 30px;
+}
+div#home footer {
+	background-color: rgba(255,255,255,0.97);
+	border-top: 1px solid rgba(0,0,0,0.25);
+	font-size: 11px;
+	color: #aaa;
+	margin: 0;
+	padding: 10px 0 40px;
+}
+div#home footer hr {
+	display: inline-block;
+	margin: 10px 0 5px;
+	width: 0;
+	height: 0;
+	border: 2px solid #ccc;
+	border-radius: 2px;
+}
+div#home footer a > img.mark {
+	width: 48px;
+	height: 48px;
+	opacity: 0.5;
+}
+div#home footer a > img.mark:hover {
+	opacity: 1;
+}
+div#tools,
+div#paint {
+	position: absolute;
+	bottom: 130px;
+}
+div#tools {
+	top: 0;
+	left: 0;
+	width: 80px;
+	background: #eee;
+	border-right: 1px solid #ddd;
+	box-sizing: border-box;
+}
+div#paint {
+	z-index: 1;
+	overflow: hidden;
+	background: #eee;
+	top: 0;
+	right: 0;
+	left: 80px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+div#paint > div.ui-canvas {
+	position: absolute;
+	overflow: hidden;
+	background: #ddd;
+	top: 0;
+	right: 20px;
+	bottom: 20px;
+	left: 0;
+	cursor: url(pointer.cur), default;
+}
+div#paint > div.ui-canvas > canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+div#paint > div.ui-canvas > canvas#canvas-main {
+	z-index: 0;
+}
+div#paint > div.ui-canvas > canvas#canvas-overlay {
+	z-index: 1;
+}
+div#paint > div.ui-button {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	box-shadow: inset 0 0 0 1px #aaa,
+	            inset 0 0 0 2px #fff;
+	background: #f7f7f7;
+	color: #999;
+	text-align: center;
+}
+div#paint > div.ui-button:hover {
+	background: #fff;
+	color: #2b2b2b;
+}
+div#paint > div.ui-button#zoom-in {
+	bottom: 0;
+	left: 0;
+}
+div#paint > div.ui-button#zoom-in::after {
+	content: '\ff0b';
+}
+div#paint > div.ui-button#zoom-out {
+	right: 0;
+	bottom: 0;
+}
+div#paint > div.ui-button#zoom-out::after {
+	content: '\ff0d';
+}
+div#paint > div.ui-button#fullscreen {
+	top: 0;
+	right: 0;
+}
+div#paint > div.ui-button#fullscreen::after {
+	content: '\0066';
+}
+div#paint > div.ui-scroll {
+	position: absolute;
+	bottom: 0;
+	box-shadow: inset 0 0 0 1px #ccc;
+	background: #eee;
+	cursor: move;
+	overflow: hidden;
+}
+div#paint > div.ui-scroll > div {
+	position: absolute;
+	box-shadow: inset 0 0 0 1px #aaa,
+	            inset 0 0 0 2px #fff,
+	            0 0 0 1px #ccc;
+	background: #f7f7f7;
+}
+div#paint > div.ui-scroll#scroll-x {
+	right: 20px;
+	left: 20px;
+	height: 20px;
+}
+div#paint > div.ui-scroll#scroll-x > div {
+	top: 0;
+	bottom: 0;
+	left: 10px;
+	width: 100px;
+}
+div#paint > div.ui-scroll#scroll-y {
+	top: 20px;
+	right: 0;
+	bottom: 20px;
+	width: 20px;
+}
+div#paint > div.ui-scroll#scroll-y > div {
+	top: 10px;
+	right: 0;
+	left: 0;
+	height: 100px;
+}
+div#chat {
+	z-index: 1;
+	position: absolute;
+	overflow: hidden;
+	background: #ddd;
+	height: 130px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+div#chat > div {
+	position: absolute;
+	background: #eee;
+	-webkit-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	user-select: text;
+	box-sizing: border-box;
+	font-size: 13px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+div#chat > div#log {
+	top: 5px;
+	right: 145px;
+	left: 0;
+	bottom: 30px;
+}
+div#chat > div#clients {
+	top: 5px;
+	right: 0;
+	bottom: 30px;
+	width: 143px;
+	padding: 5px;
+}
+div#chat > div#clients > div::before {
+	content: '\25A0 ';
+}
+div#chat > div#commands {
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 28px;
+}
+object#wacom {
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}

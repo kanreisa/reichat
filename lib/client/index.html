@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Language" content="en, ja">
+	
+	<title>reichat</title>
+	
+	<meta name="robots" content="follow,noindex,noarchive">
+	
+	<script src="//flagrate.org/flagrate.min.js"></script>
+	
+	<link href="style.css" rel="stylesheet">
+	<script type="text/javascript" src="l10n.js"></script>
+	<link rel="shortcut icon" type="image/png" href="favicon.png">
+	
+	<script>
+		window.addEventListener('DOMContentLoaded', function () {
+			
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', '/config');
+			xhr.onreadystatechange = function () {
+				
+				if (xhr.readyState === 4) {
+					var config = JSON.parse(xhr.responseText);
+					
+					document.title = config.title + ' - reichat';
+					flagrate.Element.extend(document.getElementById('title')).updateText(config.title);
+					flagrate.Element.extend(document.getElementById('version')).updateText(config.version);
+				}
+			};
+			xhr.send();
+		});
+	</script>
+</head>
+<body>
+	<div id="home">
+		<div>
+			<h1 id="title">reichat</h1>
+
+			<p lang="en">
+				Click to button of below to join the Paint Chat.<br>
+				Please note, All painting actions will synced it included erasing.
+			</p>
+			<p lang="ja">
+				お絵かきチャットに参加するには下のボタンをクリック。<br>
+				全消しを含め、全ての書き込みが同期される事にご注意下さい。
+			</p>
+
+			<!--[if !IE]><!-->
+			<a class="enter" href="reichat.html">
+				<span lang="en">JOIN</span>
+				<span lang="ja">入室する</span>
+			</a>
+			<!--<![endif]-->
+			<!--[if lte IE 10]>
+			<a class="cant-enter">
+				<span lang="en">Your browser is not supported.</span>
+				<span lang="ja">お使いのブラウザはサポートされていません</span>
+			</a>
+			<![endif]-->
+			
+			<p lang="en">
+				Designed for Pen Devices
+			</p>
+			<p lang="ja">
+				ペン入力がおすすめです
+			</p>
+		</div>
+		
+		<footer>
+			<p lang="en">
+				Designed for Internet Explorer 11 / Google Chrome 40 / Firefox 35 - <a href="https://github.com/kanreisa/reichat/issues/new" target="_blank">Send feedback</a>
+			</p>
+			<p lang="ja">
+				Internet Explorer 11 / Google Chrome 40 / Firefox 35 向けに設計されています - <a href="https://github.com/kanreisa/reichat/issues/new" target="_blank">フィードバックを送信</a>
+			</p>
+			<p>Powered by reichat/<span id="version">?</span></p>
+			<p>
+				<a href="https://github.com/kanreisa/reichat" target="_blank" title="reichat">
+					<img class="mark" src="reichat.svg">
+				</a>
+			</p>
+			<p>This is an <a href="https://github.com/kanreisa/reichat" target="_blank">Open-source Application</a> built with <a href="http://nodejs.org/" target="_blank">Node</a>.</p>
+			<hr>
+			<p><a href="https://px.mw/" target="_blank" title="れ"><img class="mark" src="re.svg"></a></p>
+			<p>&copy; 2015 <a href="https://github.com/kanreisa" target="_blank">Yuki KAN</a></p>
+		</footer>
+	</div>
+</body>
+</html>
