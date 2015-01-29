@@ -51,6 +51,8 @@ reichat --port 10133 --title "Example PaintChat Room"
 commands don't needed. see the **Web.config**
 
 ### Server Configuration
+reichat loads option values in the order of argument, config.json and ENV for each options.
+
 option name         | Argument              | ENV (app settings)  | config.json      | default value
 --------------------|-----------------------|---------------------|------------------|--------------
 Path to config.json | --config              | -                   | -                | -
