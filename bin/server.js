@@ -174,7 +174,7 @@ var server = http.createServer(function (req, res) {
 			location += 'index.html';
 		}
 		
-		var filepath = path.join('./lib/client/', location);
+		var filepath = path.join(__dirname, '../lib/client/', location);
 		
 		if (fs.existsSync(filepath) === false) {
 			res.writeHead(404, {
