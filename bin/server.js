@@ -200,6 +200,8 @@ var server = http.createServer(function (req, res) {
 				res.setHeader('Content-Type', 'image/vnd.microsoft.icon');
 			} else if (ext === 'svg') {
 				res.setHeader('Content-Type', 'image/svg+xml');
+			} else if (ext === 'png') {
+				res.setHeader('Content-Type', 'image/png');
 			}
 		} else {
 			res.setHeader('Content-Type', 'text/plain');
