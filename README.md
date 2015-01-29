@@ -38,7 +38,7 @@ npm install --global reichat
 Go to the Kudu (e.g. //**WEBSITES_NAME**.scm.azurewebsites.net/DebugConsole/?shell=powershell) and then type on console like this:
 ```powershell
 cd \home\site\wwwroot
-git clone git://github.com/kanreisa/reichat.git
+git clone git://github.com/kanreisa/reichat.git .
 npm install
 ```
 optional, You can configuration by **app settings** on Portal (e.g. //manage.windowsazure.com/@**DIRECTORY**#Workspaces/WebsiteExtension/Website/**WEBSITES_NAME**/configure
