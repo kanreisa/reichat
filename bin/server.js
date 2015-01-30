@@ -444,8 +444,8 @@ io.on('connection', function (socket) {
 				h = config.canvasHeight,
 				px = paint.x,
 				py = paint.y,
-				pw = paint.x + png.width,
-				ph = paint.y + png.height,
+				pw = Math.min(paint.x + png.width, w),
+				ph = Math.min(paint.y + png.height, h),
 				iw = png.width,
 				ih = png.height,
 				layer = layers[paint.layerNumber];
