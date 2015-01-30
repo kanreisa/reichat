@@ -119,14 +119,11 @@ var server = http.createServer(function (req, res) {
 			width: config.canvasWidth,
 			height: config.canvasHeight
 		});
+		screenPng.data.fill(255);
 		
 		var i, j, l, x, y, a,
 			w = screenPng.width,
 			h = screenPng.height;
-		
-		for (i = 0, l = w * h * 4; i < l; i++) {
-			screenPng.data[i] = 255;
-		}
 		
 		for (i = 0, l = layers.length; i < l; i++) {
 			for (y = 0; y < h; y++) {
@@ -371,7 +368,7 @@ io.on('connection', function (socket) {
 			point[2] = point[2] << 0;
 		}
 		
-		io.emit('stroke', {
+		socket.broadcast.emit('stroke', {
 			client: {
 				uuid: client.uuid,
 				name: client.name
@@ -397,7 +394,7 @@ io.on('connection', function (socket) {
 			return;
 		}
 		
-		io.emit('pointer', {
+		socket.broadcast.emit('pointer', {
 			client: {
 				uuid: client.uuid,
 				name: client.name
@@ -465,7 +462,7 @@ io.on('connection', function (socket) {
 				}
 			}
 			
-			io.emit('paint', {
+			socket.broadcast.emit('paint', {
 				client: {
 					uuid: client.uuid,
 					name: client.name
