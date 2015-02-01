@@ -109,7 +109,6 @@ var server = http.createServer(function (req, res) {
 			layerCount: layers.length,
 			version: pkg.version
 		}, null, '  '));
-		
 	} else if (req.method === 'GET' && req.url === '/canvas') {
 		res.writeHead(200, {
 			'Content-Type': 'image/png'
@@ -390,7 +389,7 @@ io.on('connection', function (socket) {
 		pointer.x = pointer.x >> 0;
 		pointer.y = pointer.y >> 0;
 		
-		if (pointer.x < 0 || pointer.y < 0 || pointer.x > config.canvasWidth || pointer.y > config.canvasHeight) {
+		if (pointer.x < -1 || pointer.y < -1 || pointer.x > config.canvasWidth || pointer.y > config.canvasHeight) {
 			return;
 		}
 		
@@ -413,26 +412,24 @@ io.on('connection', function (socket) {
 		if (isNaN(paint.layerNumber) || paint.layerNumber < 0 || paint.layerNumber >= layers.length) {
 			return;
 		}
-		if (isNaN(paint.x) || isNaN(paint.y) || isNaN(paint.width) || isNaN(paint.height)) {
+		if (isNaN(paint.x) || isNaN(paint.y)) {
 			return;
 		}
 		if (paint.mode !== 'normal' && paint.mode !== 'erase') {
 			return;
 		}
-		if (typeof paint.data !== 'string') {
+		if (Buffer.isBuffer(paint.data) === false) {
 			return;
 		}
 		
 		paint.x = paint.x >> 0;
 		paint.y = paint.y >> 0;
-		paint.width = paint.width >> 0;
-		paint.height = paint.height >> 0;
 		
-		if (paint.x < 0 || paint.y < 0 || paint.width <= 0 || paint.height <= 0) {
+		if (paint.x < 0 || paint.y < 0) {
 			return;
 		}
 		
-		new PNG().parse(new Buffer(paint.data, 'base64'), function (err, png) {
+		new PNG().parse(paint.data, function (err, png) {
 			
 			if (err) {
 				console.log(err);
@@ -471,10 +468,10 @@ io.on('connection', function (socket) {
 				mode: paint.mode,
 				x: paint.x,
 				y: paint.y,
-				width: png.width,
-				height: png.height,
 				data: paint.data
 			});
+			
+			socket.emit('painted');
 		});
 	});
 	
