@@ -367,7 +367,7 @@ io.on('connection', function (socket) {
 			point[2] = point[2] << 0;
 		}
 		
-		socket.broadcast.emit('stroke', {
+		socket.volatile.broadcast.emit('stroke', {
 			client: {
 				uuid: client.uuid,
 				name: client.name
@@ -393,7 +393,7 @@ io.on('connection', function (socket) {
 			return;
 		}
 		
-		socket.broadcast.emit('pointer', {
+		socket.volatile.broadcast.emit('pointer', {
 			client: {
 				uuid: client.uuid,
 				name: client.name
