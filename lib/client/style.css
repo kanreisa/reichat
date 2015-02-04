@@ -93,6 +93,7 @@ div#tools,
 div#paint {
 	position: absolute;
 	bottom: 130px;
+	touch-action: none;
 }
 div#tools {
 	top: 0;
@@ -131,6 +132,7 @@ div#paint > div.ui-canvas > canvas {
 }
 div#paint > div.ui-canvas > canvas#canvas-main {
 	z-index: 0;
+	background-color: #ffffff;
 }
 div#paint > div.ui-canvas > canvas#canvas-overlay {
 	z-index: 1;
