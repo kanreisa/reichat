@@ -45,7 +45,7 @@ div#mask {
 	bottom: 0;
 	left: 0;
 	background-color: rgba(255,255,255,0.8);
-	background-image: url(reichat.svg);
+	background-image: url(./icon/reichat.svg);
 	background-repeat: no-repeat;
 	background-position: center center;
 }
@@ -89,19 +89,36 @@ div#home footer a > img.mark {
 div#home footer a > img.mark:hover {
 	opacity: 1;
 }
-div#tools,
+div#toolbar,
 div#paint {
 	position: absolute;
 	bottom: 130px;
 	touch-action: none;
 }
-div#tools {
+div#toolbar {
 	top: 0;
 	left: 0;
 	width: 80px;
 	background: #eee;
 	border-right: 1px solid #ddd;
 	box-sizing: border-box;
+}
+div#toolbar > div.tools {
+	margin: 20px 0 0 0;
+}
+div#toolbar > div.tools > button {
+	width: 35px;
+	height: 35px;
+	margin: 3px 0 0 3px;
+	font-size: 10px;
+	padding: 2px;
+	white-space: normal;
+	word-break: break-all;
+	line-height: 13px;
+	text-align: left;
+	background-color: transparent;
+	background-position: center center;
+	overflow: hidden;
 }
 div#paint {
 	z-index: 1;
