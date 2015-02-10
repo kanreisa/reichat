@@ -91,13 +91,21 @@ var layers = [
 
 var server = http.createServer(function (req, res) {
 	
+	var location = req.url;
+	if (location.match(/(\?.*)$/) !== null) {
+		location = location.match(/^(.+)\?.*$/)[1];
+	}
+	if (location.match(/\/$/) !== null) {
+		location += 'index.html';
+	}
+	
 	res.setHeader('Accept-Ranges', 'none');
 	res.setHeader('Cache-Control', 'no-cache');
 	res.setHeader('Pragma', 'no-cache');
 	res.setHeader('Server', 'reichat/' + pkg.version);
 	res.setHeader('X-Content-Type-Options', 'nosniff');
 	
-	if (req.method === 'GET' && req.url === '/config') {
+	if (req.method === 'GET' && location === '/config') {
 		res.writeHead(200, {
 			'Content-Type': 'application/json; charset=utf-8'
 		});
@@ -109,7 +117,7 @@ var server = http.createServer(function (req, res) {
 			layerCount: layers.length,
 			version: pkg.version
 		}, null, '  '));
-	} else if (req.method === 'GET' && req.url === '/canvas') {
+	} else if (req.method === 'GET' && location === '/canvas') {
 		res.writeHead(200, {
 			'Content-Type': 'image/png'
 		});
@@ -138,8 +146,8 @@ var server = http.createServer(function (req, res) {
 		}
 		
 		screenPng.pack().pipe(res);
-	} else if (req.method === 'GET' && new RegExp('^\/layers\/[0-9]+$').test(req.url)) {
-		var n = parseInt(req.url.match(/^\/layers\/([0-9]+)$/)[1], 10);
+	} else if (req.method === 'GET' && new RegExp('^\/layers\/[0-9]+$').test(location)) {
+		var n = parseInt(location.match(/^\/layers\/([0-9]+)$/)[1], 10);
 		
 		if (n >= layers.length) {
 			res.writeHead(404, {
@@ -162,14 +170,6 @@ var server = http.createServer(function (req, res) {
 		
 		layerPng.pack().pipe(res);
 	} else if (req.method === 'HEAD' || req.method === 'GET' || req.method === 'OPTIONS') {
-		var location = req.url;
-		if (location.match(/(\?.*)$/) !== null) {
-			location = location.match(/^(.+)\?.*$/)[1];
-		}
-		if (location.match(/\/$/) !== null) {
-			location += 'index.html';
-		}
-		
 		var filepath = path.join(__dirname, '../lib/client/', location);
 		
 		if (fs.existsSync(filepath) === false) {
