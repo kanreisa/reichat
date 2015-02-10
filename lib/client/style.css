@@ -120,36 +120,85 @@ div#toolbar > div.tools > button {
 	background-position: center center;
 	overflow: hidden;
 }
+div#toolbar > div.tools > button.selected {
+	background-color: #fff;
+}
 div#toolbar > div.size,
-div#toolbar > div.alpha {
+div#toolbar > div.alpha,
+div#toolbar > div.r,
+div#toolbar > div.g,
+div#toolbar > div.b {
 	position: relative;
 	margin: 8px 4px;
 }
 div#toolbar > div.size > span,
-div#toolbar > div.alpha > span {
+div#toolbar > div.alpha > span,
+div#toolbar > div.r > span,
+div#toolbar > div.g > span,
+div#toolbar > div.b > span {
 	position: absolute;
-	top: 5px;
-	left: 2px;
+	top: 50%;
+	margin-top: -4px;
+	left: 4px;
 	z-index: 1;
 	font-size: 10px;
 	line-height: 10px;
 	pointer-events: none;
 	color: #000;
 }
-div#toolbar > div.size > div.flagrate-slider,
-div#toolbar > div.alpha > div.flagrate-slider {
+div#toolbar > div.size > div.flagrate-slider {
 	height: 20px;
 	overflow: hidden;
 }
+div#toolbar > div.alpha > div.flagrate-slider,
+div#toolbar > div.r > div.flagrate-slider,
+div#toolbar > div.g > div.flagrate-slider,
+div#toolbar > div.b > div.flagrate-slider {
+	height: 14px;
+	overflow: hidden;
+}
 div#toolbar > div.size > div.flagrate-slider > div,
-div#toolbar > div.alpha > div.flagrate-slider > div {
-	background-color: #aaa;
+div#toolbar > div.alpha > div.flagrate-slider > div,
+div#toolbar > div.r > div.flagrate-slider > div,
+div#toolbar > div.g > div.flagrate-slider > div,
+div#toolbar > div.b > div.flagrate-slider > div {
+	background-color: #c0c0c0;
 }
 div#toolbar > div.size > div.flagrate-slider > div::after,
-div#toolbar > div.alpha > div.flagrate-slider > div::after {
+div#toolbar > div.alpha > div.flagrate-slider > div::after,
+div#toolbar > div.r > div.flagrate-slider > div::after,
+div#toolbar > div.g > div.flagrate-slider > div::after,
+div#toolbar > div.b > div.flagrate-slider > div::after {
 	width: 1px;
 	margin-right: -1px;
 	background-color: #888;
+}
+div#toolbar > div.r > div.flagrate-slider > div {
+	background-color: rgba(175, 105, 105, 0.7);
+}
+div#toolbar > div.g > div.flagrate-slider > div {
+	background-color: rgba(91, 169, 39, 0.7);
+}
+div#toolbar > div.b > div.flagrate-slider > div {
+	background-color: rgba(89, 89, 178, 0.7);
+}
+div#toolbar > div.r > div.flagrate-slider > div::after {
+	background-color: #af6969;
+}
+div#toolbar > div.g > div.flagrate-slider > div::after {
+	background-color: #5ba927;
+}
+div#toolbar > div.b > div.flagrate-slider > div::after {
+	background-color: #5959b2;
+}
+div#toolbar > button {
+	margin: 8px 4px;
+	padding: 0;
+	display: block;
+	width: 71px;
+	height: 20px;
+	border: 1px solid #c0c0c0;
+	box-shadow: inset 0 0 0 1px #fff;
 }
 div#toolbar > div.swatch {
 	margin: 8px 4px;
