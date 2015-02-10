@@ -38,13 +38,23 @@ npm install --global reichat
 [![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
 
 #### for Experts
-Go to the Kudu (e.g. //**WEBSITES_NAME**.scm.azurewebsites.net/DebugConsole/?shell=powershell) and then type on console like this:
-```powershell
-cd \home\site\wwwroot
-git clone git://github.com/kanreisa/reichat.git .
-npm install
+1. open your Websites Dashboard on Portal.
+2. click this: ![](https://yabumi.cc/14b721a34bddfc874d1b3f1e.png) (Set up deployment from source control)
+3. select ***External repository*** and next.
+4. repository url is `https://github.com/kanreisa/reichat.git`.
+5. done.
+
+## Updating
+```bash
+npm update --global reichat
 ```
-optional, You can configuration by **app settings** on Portal (e.g. //manage.windowsazure.com/@**DIRECTORY**#Workspaces/WebsiteExtension/Website/**WEBSITES_NAME**/configure
+
+### if Azure Websites
+1. open your Websites Dashboard on Portal.
+2. go to the ***DEPLOYMENTS***.
+3. click this: ![](https://yabumi.cc/14b72219570b23ac4cf1d530.png) (SYNC)
+
+### if Azure Websites
 
 ## Server
 ```bash
@@ -67,7 +77,7 @@ Canvas Height       | --canvas-height       | CANVAS_HEIGHT       | canvasHeight
 Max Paint Log Count | --max-paint-log-count | MAX_PAINT_LOG_COUNT | maxPaintLogCount | 2000
 Max Chat Log Count  | --max-chat-log-count  | MAX_CHAT_LOG_COUNT  | maxChatLogCount  | 200
 
-### API
+## API
 * /config
 * /canvas
 * /layers/0
