@@ -1,4 +1,4 @@
-# [![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/) reichat
+# reichat [![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
 A simple paint chat application like a [PaintChatApp](http://hp.vector.co.jp/authors/VA016309/paintchat/download.html) built with Node.
 
 ![Logo](https://yabumi.cc/14b08e54b51e2abe7c7a55c7.svg)
