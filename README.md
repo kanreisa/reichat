@@ -54,8 +54,6 @@ npm update --global reichat
 2. go to the **DEPLOYMENTS**.
 3. click ![SYNC](https://yabumi.cc/14b72219570b23ac4cf1d530.png) to sync latest version.
 
-### if Azure Websites
-
 ## Server
 ```bash
 reichat --port 10133 --title "Example PaintChat Room"
