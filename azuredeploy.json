@@ -9,7 +9,8 @@
       "type": "string"
     },
     "siteLocation": {
-      "type": "string"
+      "type": "string",
+      "defaultValue": "Japan East"
     },
     "sku": {
       "type": "string",
