@@ -35,6 +35,9 @@ npm install --global reichat
 ```
 
 ### if Azure Websites
+[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+
+#### for Experts
 Go to the Kudu (e.g. //**WEBSITES_NAME**.scm.azurewebsites.net/DebugConsole/?shell=powershell) and then type on console like this:
 ```powershell
 cd \home\site\wwwroot
@@ -48,9 +51,9 @@ optional, You can configuration by **app settings** on Portal (e.g. //manage.win
 reichat --port 10133 --title "Example PaintChat Room"
 ```
 ### if Azure Websites
-commands don't needed. see the **Web.config**
+commands don't needed. it works automatically with **Web.config**.
 
-### Server Configuration
+## Server Configuration
 reichat loads option values in the order of argument, config.json and ENV for each options.
 
 option name         | Argument              | ENV (app settings)  | config.json      | default value
@@ -59,6 +62,8 @@ Path to config.json | --config              | -                   | -           
 Host                | --host                | HOST                | host             | 0.0.0.0
 Port                | --port                | PORT                | port             | 10133
 Title               | --title               | TITLE               | title            | reichat
+Canvas Width        | --canvas-width        | CANVAS_WIDTH        | canvasWidth      | 1920
+Canvas Height       | --canvas-height       | CANVAS_HEIGHT       | canvasHeight     | 1080
 Max Paint Log Count | --max-paint-log-count | MAX_PAINT_LOG_COUNT | maxPaintLogCount | 2000
 Max Chat Log Count  | --max-chat-log-count  | MAX_CHAT_LOG_COUNT  | maxChatLogCount  | 200
 
