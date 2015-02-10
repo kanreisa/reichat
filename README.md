@@ -39,8 +39,8 @@ npm install --global reichat
 
 #### for Experts
 1. open your Websites Dashboard on Portal.
-2. click this: ![Set up deployment from source control](https://yabumi.cc/14b721a34bddfc874d1b3f1e.png)
-3. select ***External repository*** and next.
+2. click ![Set up deployment from source control](https://yabumi.cc/14b721a34bddfc874d1b3f1e.png)
+3. select **External repository** and next.
 4. repository url is `https://github.com/kanreisa/reichat.git`.
 5. done.
 
@@ -51,8 +51,8 @@ npm update --global reichat
 
 ### if Azure Websites
 1. open your Websites Dashboard on Portal.
-2. go to the ***DEPLOYMENTS***.
-3. click this: ![SYNC](https://yabumi.cc/14b72219570b23ac4cf1d530.png)
+2. go to the **DEPLOYMENTS**.
+3. click ![SYNC](https://yabumi.cc/14b72219570b23ac4cf1d530.png) to sync latest version.
 
 ### if Azure Websites
 
