@@ -9,11 +9,11 @@
     },
     "CANVAS_WIDTH": {
       "description": "Canvas Width",
-      "value": "1920"
+      "value": "1280"
     },
     "CANVAS_HEIGHT": {
       "description": "Canvas Height",
-      "value": "1080"
+      "value": "720"
     }
   }
 }
