@@ -1,0 +1,19 @@
+{
+  "name": "reichat",
+  "repository": "https://github.com/kanreisa/reichat",
+  "logo": "https://yabumi.cc/14b08e54b51e2abe7c7a55c7.svg",
+  "env": {
+    "TITLE": {
+      "description": "Title",
+      "value": "reichat"
+    },
+    "CANVAS_WIDTH": {
+      "description": "Canvas Width",
+      "value": "1920"
+    },
+    "CANVAS_HEIGHT": {
+      "description": "Canvas Height",
+      "value": "1080"
+    }
+  }
+}
