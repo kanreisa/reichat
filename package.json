@@ -25,7 +25,8 @@
   ],
   "author": "Yuki KAN <re@pixely.jp> (https://github.com/kanreisa)",
   "contributors": [
-    "MugeSo (http://muge.so/)"
+    "MugeSo (http://muge.so/)",
+    "furugomu"
   ],
   "license": "MIT",
   "dependencies": {
