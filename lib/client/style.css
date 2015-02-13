@@ -402,9 +402,11 @@ div#chat > div#commands > input {
 	font-size: 12px;
 	padding-right: 200px;
 	background-color: #fafafa;
+	color: #aaa;
 }
 div#chat > div#commands > input:focus {
 	background-color: #fff;
+	color: #2b2b2b;
 }
 div#chat > div#commands > button {
 	position: absolute;
