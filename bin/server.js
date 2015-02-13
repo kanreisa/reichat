@@ -481,6 +481,17 @@ io.on('connection', function (socket) {
 			return;
 		}
 		
+		if (typeof chat.message !== 'string' || chat.message.trim() === '') {
+			return;
+		}
 		
+		io.emit('chat', {
+			client: {
+				uuid: client.uuid,
+				name: client.name
+			},
+			message: chat.message,
+			time: Date.now()
+		});
 	});
 });

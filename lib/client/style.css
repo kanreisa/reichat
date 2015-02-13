@@ -102,6 +102,8 @@ div#toolbar {
 	background: #eee;
 	border-right: 1px solid #ddd;
 	box-sizing: border-box;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 div#toolbar > div.tools {
 	margin: 16px 0;
@@ -349,6 +351,32 @@ div#chat > div#log {
 	right: 145px;
 	left: 0;
 	bottom: 30px;
+	padding: 5px;
+}
+div#chat > div#log > div > span.date {
+	color: #999;
+	margin-right: 10px;
+}
+div#chat > div#log > div > span.name {
+	color: #555;
+	margin-right: 10px;
+}
+div#chat > div#log > div.reichat > span.name {
+	color: #ec7ca9;
+}
+div#chat > div#log > div > span.name::after {
+	content: '>';
+	margin-left: 5px;
+	color: #bbb;
+	font-weight: bold;
+	font-family: sans-serif;
+}
+div#chat > div#log > div > span.message {
+	color: #555;
+	margin-right: 10px;
+}
+div#chat > div#log > div.reichat > span.message {
+	color: #aaa;
 }
 div#chat > div#clients {
 	top: 5px;
@@ -365,6 +393,40 @@ div#chat > div#commands {
 	bottom: 0;
 	left: 0;
 	height: 28px;
+	overflow: hidden;
+}
+div#chat > div#commands > input {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 12px;
+	padding-right: 200px;
+	background-color: #fafafa;
+}
+div#chat > div#commands > input:focus {
+	background-color: #fff;
+}
+div#chat > div#commands > button {
+	position: absolute;
+	top: 2px;
+	height: 24px;
+}
+div#chat > div#commands > button.name {
+	left: 2px;
+}
+div#chat > div#commands > button.name > span::after {
+	content: '>';
+	color: #aaa;
+	margin-left: 5px;
+	font-weight: bold;
+	font-family: sans-serif;
+}
+div#chat > div#commands > button.send {
+	right: 145px;
+}
+div#chat > div#commands > button.exit {
+	right: 2px;
+	width: 141px;
 }
 object#wacom {
 	z-index: 2;
