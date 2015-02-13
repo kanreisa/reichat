@@ -485,6 +485,10 @@ io.on('connection', function (socket) {
 			return;
 		}
 		
+		if (chat.message.length > 256) {
+			return;
+		}
+		
 		io.emit('chat', {
 			client: {
 				uuid: client.uuid,
