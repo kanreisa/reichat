@@ -274,6 +274,9 @@ div#paint > div.ui-canvas > canvas#canvas-overlay.panning {
 div#paint > div.ui-canvas > canvas#canvas-overlay.panning:active {
 	cursor: url(grasping-hand-closed.cur), default;
 }
+div#paint > div.ui-canvas > canvas#canvas-overlay.picking {
+	cursor: url(picker.cur), default;
+}
 div#paint > div.ui-button {
 	position: absolute;
 	width: 20px;
