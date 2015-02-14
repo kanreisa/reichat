@@ -232,7 +232,6 @@ div#paint > div.ui-canvas {
 	right: 20px;
 	bottom: 20px;
 	left: 0;
-	cursor: url(pointer.cur), default;
 }
 div#paint > div.ui-canvas > canvas {
 	position: absolute;
@@ -245,6 +244,13 @@ div#paint > div.ui-canvas > canvas#canvas-main {
 }
 div#paint > div.ui-canvas > canvas#canvas-overlay {
 	z-index: 1;
+	cursor: url(pointer.cur), default;
+}
+div#paint > div.ui-canvas > canvas#canvas-overlay.panning {
+	cursor: url(grasping-hand-open.cur), default;
+}
+div#paint > div.ui-canvas > canvas#canvas-overlay.panning:active {
+	cursor: url(grasping-hand-closed.cur), default;
 }
 div#paint > div.ui-button {
 	position: absolute;
