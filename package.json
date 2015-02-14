@@ -1,6 +1,6 @@
 {
   "name": "reichat",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "A simple paint chat application like a PaintChatApp built with Node.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
