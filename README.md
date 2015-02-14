@@ -83,6 +83,17 @@ Canvas Height       | --canvas-height       | CANVAS_HEIGHT       | canvasHeight
 Max Paint Log Count | --max-paint-log-count | MAX_PAINT_LOG_COUNT | maxPaintLogCount | 2000
 Max Chat Log Count  | --max-chat-log-count  | MAX_CHAT_LOG_COUNT  | maxChatLogCount  | 200
 
+## Shortcuts
+* Eyedropper
+ * `Ctrl + Alt`
+ * (Right Click)
+* Hand Tool (Panning)
+ * `Space`
+* Switch to Last Tool
+ * `Tab`
+* Focus to Chat
+ * `Enter`
+
 ## API
 * /config
 * /canvas
