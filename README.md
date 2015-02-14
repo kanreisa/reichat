@@ -28,7 +28,8 @@ A simple paint chat application like a [PaintChatApp](http://hp.vector.co.jp/aut
 
 #### Powered by
 * [Node.js](http://nodejs.org/)
-* [Pointer Events](http://www.w3.org/TR/pointerevents/) (for Internet Explorer 11) see [here](https://msdn.microsoft.com/en-us/library/ie/dn433244(v=vs.85).aspx)
+* [Pointer Events](http://www.w3.org/TR/pointerevents/) (for Internet Explorer 11) see [here](https://msdn.microsoft.com/en-us/library/ie/dn433244(v=vs.85).aspx) 
+* [PEP](https://github.com/jquery/PEP) (Pointer Events Polyfill) see [here](https://msopentech.com/blog/2014/12/17/jquery-adopts-pointer-events/)
 * [Wacom WebPlugin](http://www.wacomeng.com/web/)
 * [HTML Canvas 2D Context](http://www.w3.org/TR/2dcontext/)
 * [Flagrate](https://flagrate.org/)
