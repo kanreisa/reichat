@@ -9,6 +9,9 @@ A simple paint chat application like a [PaintChatApp](http://hp.vector.co.jp/aut
 * [reichat on Azure Websites](https://reichat-dev.azurewebsites.net/) (JP)
 * [reichat on Heroku](https://reichat-dev.herokuapp.com/) (US)
 
+#### Screenshot
+![](https://yabumi.cc/14b8d9ec1e1979afb2215b23.png)
+
 #### Features
 * **Pen Input Support**
 * Layers
