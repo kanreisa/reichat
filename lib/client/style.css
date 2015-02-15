@@ -104,6 +104,10 @@ div#toolbar {
 	box-sizing: border-box;
 	overflow-x: hidden;
 	overflow-y: auto;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 div#toolbar > div.tools {
 	margin: 16px 0 8px;
@@ -259,6 +263,7 @@ div#paint > div.ui-canvas > canvas {
 	position: absolute;
 	top: 0;
 	left: 0;
+	transform-origin: 0 0 0;
 }
 div#paint > div.ui-canvas > canvas#canvas-main {
 	z-index: 0;
@@ -287,6 +292,7 @@ div#paint > div.ui-button {
 	background: #f7f7f7;
 	color: #999;
 	text-align: center;
+	cursor: pointer;
 }
 div#paint > div.ui-button:hover {
 	background: #fff;
