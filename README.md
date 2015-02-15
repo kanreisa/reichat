@@ -87,6 +87,9 @@ Max Chat Log Count  | --max-chat-log-count  | MAX_CHAT_LOG_COUNT  | maxChatLogCo
 * Eyedropper
  * `Ctrl + Alt`
  * (Right Click)
+* Eyedropper (Current Layer)
+ * `Ctrl + Shift + Alt`
+ * (`Shift` + Right Click)
 * Hand Tool (Panning)
  * `Space`
 * Switch to Last Tool
