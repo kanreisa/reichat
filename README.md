@@ -83,6 +83,9 @@ Port                | --port                | PORT                | port        
 Title               | --title               | TITLE               | title            | reichat
 Canvas Width        | --canvas-width        | CANVAS_WIDTH        | canvasWidth      | 1920
 Canvas Height       | --canvas-height       | CANVAS_HEIGHT       | canvasHeight     | 1080
+Data Directory      | --data-dir            | DATA_DIR            | dataDir          | (tmpdir)
+Data File Prefix    | --data-file-prefix    | DATA_FILE_PREFIX    | dataFilePrefix   | reichat_
+Data Save Interval  | --data-save-interval  | DATA_SAVE_INTERVAL  | dataSaveInterval | 5000
 Max Paint Log Count | --max-paint-log-count | MAX_PAINT_LOG_COUNT | maxPaintLogCount | 2000
 Max Chat Log Count  | --max-chat-log-count  | MAX_CHAT_LOG_COUNT  | maxChatLogCount  | 200
 

@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 /*!
  *  reichat server
  *
@@ -54,13 +53,26 @@ opts.parse([
 		value: true
 	},
 	{
-		long: 'width',
+		long: 'canvas-width',
 		description: 'Width of canvas',
 		value: true
 	},
 	{
-		long: 'height',
+		long: 'canvas-height',
 		description: 'Height of canvas',
+		value: true
+	},
+	{
+		long: 'data-dir',
+		description: 'Data saving directory',
+		value: true
+	},
+	{
+		long: 'data-file-prefix',
+		value: true
+	},
+	{
+		long: 'data-save-interval',
 		value: true
 	},
 	{
@@ -80,14 +92,89 @@ config.port = opts.get('port') || config.port || process.env.PORT || 10133;
 config.title = opts.get('title') || config.title || process.env.TITLE || 'reichat';
 config.canvasWidth = parseInt(opts.get('canvas-width') || config.canvasWidth || process.env.CANVAS_WIDTH || 1920, 10);
 config.canvasHeight = parseInt(opts.get('canvas-height') || config.canvasHeight || process.env.CANVAS_HEIGHT || 1080, 10);
+config.dataDir = opts.get('data-dir') || config.dataDir || process.env.DATA_DIR || require('os').tmpdir();
+config.dataFilePrefix = opts.get('data-file-prefix') || config.dataFilePrefix || process.env.DATA_FILE_PREFIX || 'reichat_';
+config.dataSaveInterval = parseInt(opts.get('data-save-interval') || config.dataSaveInterval || process.env.DATA_SAVE_INTERVAL || 5000, 10);
 config.maxPaintLogCount = parseInt(opts.get('max-paint-log-count') || config.maxPaintLogCount || process.env.MAX_PAINT_LOG_COUNT || 2000, 10);
 config.maxChatLogCount = parseInt(opts.get('max-chat-log-count') || config.maxChatLogCount || process.env.MAX_CHAT_LOG_COUNT || 200, 10);
 
-var layers = [
-	new Buffer(config.canvasWidth * config.canvasHeight * 4),// Layer 0
-	new Buffer(config.canvasWidth * config.canvasHeight * 4),
-	new Buffer(config.canvasWidth * config.canvasHeight * 4)
-];
+config.layerCount = 3;
+
+var layers = [];
+
+(function () {
+	
+	var i;
+	for (i = 0; i < config.layerCount; i++) {
+		layers.push({
+			isMustSaveData: false,
+			cache: null,
+			data: new Buffer(config.canvasWidth * config.canvasHeight * 4)
+		});
+	}
+}());
+
+if (config.dataDir === '/dev/null' || config.dataDir === 'null' || fs.existsSync(config.dataDir) === false) {
+	config.dataDir = null;
+}
+
+if (config.dataDir) {
+	layers.forEach(function (layer, i) {
+		
+		var filePath = layer.filePath = path.join(config.dataDir, [config.dataFilePrefix, 'layer', i, '.png'].join(''));
+		
+		if (fs.existsSync(filePath) === true) {
+			util.log(util.format('layer#%s data found. file=%s', i, filePath));
+			
+			fs.createReadStream(filePath).pipe(new PNG()).on('parsed', function () {
+				
+				if (this.width !== config.canvasWidth || this.height !== config.canvasHeight) {
+					return;
+				}
+				
+				this.data.copy(layer.data);
+				
+				util.log(util.format('layer#%s data loaded. file=%s', i, filePath));
+			});
+		}
+	});
+	
+	setInterval(function () {
+		
+		layers.forEach(function (layer, i) {
+			
+			if (layer.isMustSaveData === false) {
+				return;
+			}
+			layer.isMustSaveData = false;
+			
+			var writeStream = fs.createWriteStream(layer.filePath);
+			
+			if (layer.cache === null) {
+				var layerPng = new PNG({
+					width: config.canvasWidth,
+					height: config.canvasHeight
+				});
+				
+				layer.data.copy(layerPng.data);
+				
+				var buffers = [];
+				
+				layerPng.pack().on('data', function (buffer) {
+					
+					writeStream.write(buffer);
+					buffers.push(buffer);
+				}).on('end', function () {
+					
+					writeStream.end();
+					layer.cache = Buffer.concat(buffers);
+				});
+			} else {
+				writeStream.end(layer.cache);
+			}
+		});
+	}, config.dataSaveInterval);
+}
 
 var server = http.createServer(function (req, res) {
 	
@@ -136,11 +223,11 @@ var server = http.createServer(function (req, res) {
 			for (y = 0; y < h; y++) {
 				for (x = 0; x < w; x++) {
 					j = (w * y + x) << 2;
-					a = layers[i][j + 3];
+					a = layers[i].data[j + 3];
 					
-					screenPng.data[j] = Math.round(((255 - a) / 255 * screenPng.data[j]) + (a / 255 * layers[i][j]));
-					screenPng.data[j + 1] = Math.round(((255 - a) / 255 * screenPng.data[j + 1]) + (a / 255 * layers[i][j + 1]));
-					screenPng.data[j + 2] = Math.round(((255 - a) / 255 * screenPng.data[j + 2]) + (a / 255 * layers[i][j + 2]));
+					screenPng.data[j] = Math.round(((255 - a) / 255 * screenPng.data[j]) + (a / 255 * layers[i].data[j]));
+					screenPng.data[j + 1] = Math.round(((255 - a) / 255 * screenPng.data[j + 1]) + (a / 255 * layers[i].data[j + 1]));
+					screenPng.data[j + 2] = Math.round(((255 - a) / 255 * screenPng.data[j + 2]) + (a / 255 * layers[i].data[j + 2]));
 				}
 			}
 		}
@@ -161,14 +248,28 @@ var server = http.createServer(function (req, res) {
 			'Content-Type': 'image/png'
 		});
 		
-		var layerPng = new PNG({
-			width: config.canvasWidth,
-			height: config.canvasHeight
-		});
-		
-		layers[n].copy(layerPng.data);
-		
-		layerPng.pack().pipe(res);
+		if (layers[n].cache === null) {
+			var layerPng = new PNG({
+				width: config.canvasWidth,
+				height: config.canvasHeight
+			});
+			
+			layers[n].data.copy(layerPng.data);
+			
+			var buffers = [];
+			
+			layerPng.pack().on('data', function (buffer) {
+				
+				res.write(buffer);
+				buffers.push(buffer);
+			}).on('end', function () {
+				
+				res.end();
+				layers[n].cache = Buffer.concat(buffers);
+			});
+		} else {
+			res.end(layers[n].cache);
+		}
 	} else if (req.method === 'HEAD' || req.method === 'GET' || req.method === 'OPTIONS') {
 		var filepath = path.join(__dirname, '../lib/client/', location);
 		
@@ -442,7 +543,6 @@ io.on('connection', function (socket) {
 		new PNG().parse(paint.data, function (err, png) {
 			
 			if (err) {
-				console.log(err);
 				return;
 			}
 			
@@ -462,12 +562,15 @@ io.on('connection', function (socket) {
 					i = (w * y + x) << 2;
 					j = (iw * (y - py) + (x - px)) << 2;
 
-					layer[i] = png.data[j];
-					layer[i + 1] = png.data[j + 1];
-					layer[i + 2] = png.data[j + 2];
-					layer[i + 3] = png.data[j + 3];
+					layer.data[i] = png.data[j];
+					layer.data[i + 1] = png.data[j + 1];
+					layer.data[i + 2] = png.data[j + 2];
+					layer.data[i + 3] = png.data[j + 3];
 				}
 			}
+			
+			layer.isMustSaveData = true;
+			layer.cache = null;
 			
 			socket.broadcast.emit('paint', {
 				client: {
