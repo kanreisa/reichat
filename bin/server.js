@@ -507,5 +507,7 @@ io.on('connection', function (socket) {
 			message: chat.message,
 			time: Date.now()
 		});
+		
+		util.log(util.format('%s %s said: "%s". client=%s<%s>', remoteAddr, socket.id, chat.message, client.name, client.uuid));
 	});
 });
