@@ -92,7 +92,7 @@
             "appSettings": [
               {
                 "name": "WEBSITE_NODE_DEFAULT_VERSION",
-                "value": "0.10.32"
+                "value": "0.12.0"
               },
               {
                 "name": "TITLE",
