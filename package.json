@@ -4,10 +4,10 @@
   "description": "A simple paint chat application like a PaintChatApp built with Node.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./bin/server.js"
+    "start": "./bin/reichat.js"
   },
   "bin": {
-    "reichat": "./bin/server-wrapper.js"
+    "reichat": "./bin/reichat.js"
   },
   "homepage": "https://github.com/kanreisa/reichat",
   "repository": {
