@@ -283,6 +283,11 @@ io.on('connection', function (socket) {
 			
 			io.emit('clients', rei.getClients());
 			
+			socket.broadcast.emit('chat', {
+				time: Date.now(),
+				message: util.format('* %s has left.', client.name)
+			});
+			
 			util.log(util.format('%s %s disconnected. client=%s<%s>', remoteAddr, socket.id, client.name, client.uuid));
 		} else {
 			util.log(util.format('%s %s disconnected.', remoteAddr, socket.id));
@@ -332,6 +337,11 @@ io.on('connection', function (socket) {
 		});
 		
 		io.emit('clients', rei.getClients());
+		
+		socket.broadcast.emit('chat', {
+			time: Date.now(),
+			message: util.format('* %s has joined.', client.name)
+		});
 		
 		util.log(util.format('%s %s joined. client=%s<%s>', remoteAddr, socket.id, client.name, client.uuid));
 	});
