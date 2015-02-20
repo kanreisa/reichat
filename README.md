@@ -9,6 +9,8 @@ A simple paint chat application like a [PaintChatApp](http://hp.vector.co.jp/aut
 * [reichat on Azure Websites](https://reichat-dev.azurewebsites.net/) (JP)
 * [reichat on Heroku](https://reichat-dev.herokuapp.com/) (US)
 
+Note: They are synchronized using Redis!
+
 #### Screenshot
 ![](https://yabumi.cc/14b8d9ec1e1979afb2215b23.png)
 
@@ -85,7 +87,10 @@ Canvas Width        | --canvas-width        | CANVAS_WIDTH        | canvasWidth 
 Canvas Height       | --canvas-height       | CANVAS_HEIGHT       | canvasHeight     | 1080
 Data Directory      | --data-dir            | DATA_DIR            | dataDir          | (tmpdir)
 Data File Prefix    | --data-file-prefix    | DATA_FILE_PREFIX    | dataFilePrefix   | reichat_
-Data Save Interval  | --data-save-interval  | DATA_SAVE_INTERVAL  | dataSaveInterval | 5000
+Data Save Interval  | --data-save-interval  | DATA_SAVE_INTERVAL  | dataSaveInterval | 3000
+Redis Host          | --redis-host          | REDIS_HOST          | redisHost        | -
+Redis Port          | --redis-port          | REDIS_PORT          | redisPort        | 6379
+Redis Password      | --redis-password      | REDIS_PASSWORD      | redisPassword    | -
 Max Paint Log Count | --max-paint-log-count | MAX_PAINT_LOG_COUNT | maxPaintLogCount | 2000
 Max Chat Log Count  | --max-chat-log-count  | MAX_CHAT_LOG_COUNT  | maxChatLogCount  | 200
 
