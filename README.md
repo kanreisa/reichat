@@ -1,4 +1,10 @@
-# reichat [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy) [![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+# reichat
+
+[![Build Status](https://secure.travis-ci.org/kanreisa/reichat.svg)](http://travis-ci.org/kanreisa/reichat)
+[![npm version](https://badge.fury.io/js/reichat.svg)](http://badge.fury.io/js/reichat)
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+[![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+
 A simple paint chat application like a [PaintChatApp](http://hp.vector.co.jp/authors/VA016309/paintchat/download.html) built with Node.
 
 ![Logo](https://yabumi.cc/14b08e54b51e2abe7c7a55c7.svg)
@@ -45,7 +51,7 @@ npm install --global reichat
 ```
 
 ### if Azure Websites
-[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+[![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
 
 #### for Experts
 1. open your Websites Dashboard on Portal.
