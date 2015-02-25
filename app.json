@@ -17,15 +17,18 @@
     },
     "REDIS_HOST": {
       "description": "Redis Host (optional)",
-      "value": ""
+      "value": "",
+      "required": false
     },
     "REDIS_PORT": {
       "description": "Redis Port (optional)",
-      "value": "6379"
+      "value": "6379",
+      "required": false
     },
     "REDIS_PASSWORD": {
       "description": "Redis Password (optional)",
-      "value": ""
+      "value": "",
+      "required": false
     },
     "FORWARDED_HEADER": "XFF"
   },
