@@ -5,7 +5,7 @@
   "env": {
     "TITLE": {
       "description": "Title",
-      "value": "reichat"
+      "value": "My PaintChat"
     },
     "CANVAS_WIDTH": {
       "description": "Canvas Width",
@@ -14,6 +14,20 @@
     "CANVAS_HEIGHT": {
       "description": "Canvas Height",
       "value": "720"
-    }
-  }
+    },
+    "REDIS_HOST": {
+      "description": "Redis Host (optional)",
+      "value": ""
+    },
+    "REDIS_PORT": {
+      "description": "Redis Port (optional)",
+      "value": "6379"
+    },
+    "REDIS_PASSWORD": {
+      "description": "Redis Password (optional)",
+      "value": ""
+    },
+    "FORWARDED_HEADER": "XFF"
+  },
+  "success_url": "/"
 }
