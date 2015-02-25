@@ -30,6 +30,11 @@
       "value": "",
       "required": false
     },
+    "REDIS_KEY_PREFIX": {
+      "description": "Redis Key Prefix (optional)",
+      "value": "",
+      "required": false
+    },
     "FORWARDED_HEADER": "XFF"
   },
   "success_url": "/"
