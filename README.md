@@ -2,6 +2,9 @@
 
 [![Build Status](https://secure.travis-ci.org/kanreisa/reichat.svg)](http://travis-ci.org/kanreisa/reichat)
 [![npm version](https://badge.fury.io/js/reichat.svg)](http://badge.fury.io/js/reichat)
+[![Dependency Status](https://david-dm.org/kanreisa/reichat-server.svg)](https://david-dm.org/kanreisa/reichat)
+[![devDependency Status](https://david-dm.org/kanreisa/reichat-server/dev-status.svg)](https://david-dm.org/kanreisa/reichat#info=devDependencies)
+
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 [![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
 
