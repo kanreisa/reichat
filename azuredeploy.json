@@ -36,11 +36,11 @@
       "defaultValue": "My PaintChat"
     },
     "canvasWidth": {
-      "type": "int",
+      "type": "string",
       "defaultValue": "1280"
     },
     "canvasHeight": {
-      "type": "int",
+      "type": "string",
       "defaultValue": "720"
     },
     "redisHost": {
@@ -48,7 +48,7 @@
       "defaultValue": ""
     },
     "redisPort": {
-      "type": "int",
+      "type": "string",
       "defaultValue": "6379"
     },
     "redisPassword": {
