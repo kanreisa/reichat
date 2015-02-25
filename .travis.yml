@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "0.12"
+  - iojs
+
+install:
+  - npm install
+  - npm install --global .
+
+script:
+  - npm test
+
+notifications:
+  email: false
