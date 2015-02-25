@@ -26,7 +26,8 @@
 					
 					document.title = config.title + ' - reichat';
 					flagrate.Element.extend(document.getElementById('title')).updateText(config.title);
-					flagrate.Element.extend(document.getElementById('version')).updateText(config.version);
+					flagrate.Element.extend(document.getElementById('client-version')).updateText(config.version.client);
+					flagrate.Element.extend(document.getElementById('server-version')).updateText(config.version.server);
 				}
 			};
 			xhr.send();
@@ -75,7 +76,7 @@
 			<p lang="ja">
 				Internet Explorer 11 / Google Chrome 40 / Firefox 35 向けに設計されています - <a href="https://github.com/kanreisa/reichat/issues/new" target="_blank">フィードバックを送信</a>
 			</p>
-			<p>Powered by reichat/<span id="version">?</span></p>
+			<p>Powered by reichat/<span id="client-version">?</span> (server/<span id="server-version">?</span>)</p>
 			<p>
 				<a href="https://github.com/kanreisa/reichat" target="_blank" title="reichat">
 					<img class="mark" src="./icon/reichat.svg">

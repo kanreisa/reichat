@@ -77,8 +77,8 @@ npm update --global reichat
 ```bash
 reichat --port 10133 --title "Example PaintChat Room"
 ```
-### if Azure Websites
-commands don't needed. it works automatically with **Web.config**.
+### if Azure Websites / Heroku
+commands don't needed. it works automatically.
 
 ## Server Configuration
 reichat loads option values in the order of argument, config.json and ENV for each options.
@@ -88,17 +88,22 @@ option name         | Argument              | ENV (app settings)  | config.json 
 Path to config.json | --config              | -                   | -                | -
 Host                | --host                | HOST                | host             | 0.0.0.0
 Port                | --port                | PORT                | port             | 10133
-Title               | --title               | TITLE               | title            | reichat
+Title               | --title               | TITLE               | title            | PaintChat
 Canvas Width        | --canvas-width        | CANVAS_WIDTH        | canvasWidth      | 1920
 Canvas Height       | --canvas-height       | CANVAS_HEIGHT       | canvasHeight     | 1080
 Data Directory      | --data-dir            | DATA_DIR            | dataDir          | (tmpdir)
 Data File Prefix    | --data-file-prefix    | DATA_FILE_PREFIX    | dataFilePrefix   | reichat_
-Data Save Interval  | --data-save-interval  | DATA_SAVE_INTERVAL  | dataSaveInterval | 3000
 Redis Host          | --redis-host          | REDIS_HOST          | redisHost        | -
 Redis Port          | --redis-port          | REDIS_PORT          | redisPort        | 6379
 Redis Password      | --redis-password      | REDIS_PASSWORD      | redisPassword    | -
+Redis Key Prefix    | --redis-key-prefix    | REDIS_KEY_PREFIX    | redisKeyPrefix   | -
 Max Paint Log Count | --max-paint-log-count | MAX_PAINT_LOG_COUNT | maxPaintLogCount | 2000
-Max Chat Log Count  | --max-chat-log-count  | MAX_CHAT_LOG_COUNT  | maxChatLogCount  | 200
+Max Chat Log Count  | --max-chat-log-count  | MAX_CHAT_LOG_COUNT  | maxChatLogCount  | 100
+Forwarded Header    | --forwarded-header    | FORWARDED_HEADER    | forwardedHeader  | -
+
+### Forwarded Header
+if in trusted proxy you can use this option for logging.
+* `XFF`
 
 ## Shortcuts
 * Eyedropper

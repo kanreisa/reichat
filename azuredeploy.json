@@ -36,12 +36,24 @@
       "defaultValue": "My PaintChat"
     },
     "canvasWidth": {
-      "type": "string",
+      "type": "int",
       "defaultValue": "1280"
     },
     "canvasHeight": {
-      "type": "string",
+      "type": "int",
       "defaultValue": "720"
+    },
+    "redisHost": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "redisPort": {
+      "type": "int",
+      "defaultValue": "6379"
+    },
+    "redisPassword": {
+      "type": "string",
+      "defaultValue": ""
     },
     "repoUrl": {
       "type": "string"
@@ -99,6 +111,10 @@
                 "value": "D:\\home\\site\\wwwroot\\data"
               },
               {
+                "name": "FORWARDED_HEADER",
+                "value": "XFF"
+              },
+              {
                 "name": "TITLE",
                 "value": "[parameters('reichatTitle')]"
               },
@@ -109,6 +125,18 @@
               {
                 "name": "CANVAS_HEIGHT",
                 "value": "[parameters('canvasHeight')]"
+              },
+              {
+                "name": "REDIS_HOST",
+                "value": "[parameters('redisHost')]"
+              },
+              {
+                "name": "REDIS_PORT",
+                "value": "[parameters('redisPort')]"
+              },
+              {
+                "name": "REDIS_PASSWORD",
+                "value": "[parameters('redisPassword')]"
               }
             ]
           }
