@@ -55,6 +55,10 @@
       "type": "string",
       "defaultValue": ""
     },
+    "redisKeyPrefix": {
+      "type": "string",
+      "defaultValue": ""
+    },
     "repoUrl": {
       "type": "string"
     },
@@ -137,6 +141,10 @@
               {
                 "name": "REDIS_PASSWORD",
                 "value": "[parameters('redisPassword')]"
+              },
+              {
+                "name": "REDIS_KEY_PREFIX",
+                "value": "[parameters('redisKeyPrefix')]"
               }
             ]
           }
