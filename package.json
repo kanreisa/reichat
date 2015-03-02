@@ -1,6 +1,6 @@
 {
   "name": "reichat",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "description": "A lovely paint chat application like a PaintChatApp built with Node.",
   "scripts": {
     "start": "./bin/reichat.js",
