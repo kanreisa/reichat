@@ -57,16 +57,17 @@ div#home {
 	text-align: center;
 }
 div#home > div {
-	background-color: rgba(255,255,255,0.92);
+	background-color: rgba(255,255,255,0.88);
 	padding: 60px 0 30px;
 }
 div#home h1 {
 	font-weight: normal;
 	font-size: 40px;
 	margin: 0 0 30px;
+	color: #555;
 }
 div#home footer {
-	background-color: rgba(255,255,255,0.97);
+	background-color: rgba(255,255,255,0.95);
 	border-top: 1px solid rgba(0,0,0,0.25);
 	font-size: 11px;
 	color: #aaa;
