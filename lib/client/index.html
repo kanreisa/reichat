@@ -28,6 +28,8 @@
 					flagrate.Element.extend(document.getElementById('title')).updateText(config.title);
 					flagrate.Element.extend(document.getElementById('client-version')).updateText(config.version.client);
 					flagrate.Element.extend(document.getElementById('server-version')).updateText(config.version.server);
+					
+					localStorage.setItem('enter', 'yes');
 				}
 			};
 			xhr.send();
