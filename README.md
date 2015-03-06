@@ -9,7 +9,7 @@ A lovely paint chat application like a [PaintChatApp](http://hp.vector.co.jp/aut
 [![devDependency Status][devdep-img]][devdep-url]
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-[![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+[![Deploy to Azure](https://azuredeploy.net/deploybutton.png?_nonce=1425633252963)](https://azuredeploy.net/?repository=https://github.com/kanreisa/reichat)
 
 **Currently in development.** see DEMO (below)
 
@@ -60,7 +60,7 @@ $ npm install --global reichat
 
 ### if Azure Websites
 
-[![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+[![Deploy to Azure](https://azuredeploy.net/deploybutton.png?_nonce=1425633252963)](https://azuredeploy.net/?repository=https://github.com/kanreisa/reichat)
 
 #### for Experts
 
