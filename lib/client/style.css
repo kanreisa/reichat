@@ -265,13 +265,11 @@ div#paint > div.ui-canvas > canvas {
 	top: 0;
 	left: 0;
 	transform-origin: 0 0 0;
-}
-div#paint > div.ui-canvas > canvas#canvas-main {
-	z-index: 0;
-	background-color: #ffffff;
+	transition-property: opacity;
+	transition-duration: 0.5s;
 }
 div#paint > div.ui-canvas > canvas#canvas-overlay {
-	z-index: 1;
+	z-index: 999;
 	cursor: url(pointer.cur), default;
 }
 div#paint > div.ui-canvas > canvas#canvas-overlay.panning {
