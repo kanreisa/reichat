@@ -131,6 +131,7 @@ div#toolbar > div.tools > button.selected {
 	background-color: #fff;
 }
 div#toolbar > div.size,
+div#toolbar > div.stabilize,
 div#toolbar > div.alpha,
 div#toolbar > div.r,
 div#toolbar > div.g,
@@ -139,6 +140,7 @@ div#toolbar > div.b {
 	margin: 8px 4px;
 }
 div#toolbar > div.size > span,
+div#toolbar > div.stabilize > span,
 div#toolbar > div.alpha > span,
 div#toolbar > div.r > span,
 div#toolbar > div.g > span,
@@ -157,6 +159,7 @@ div#toolbar > div.size > div.flagrate-slider {
 	height: 20px;
 	overflow: hidden;
 }
+div#toolbar > div.stabilize > div.flagrate-slider,
 div#toolbar > div.alpha > div.flagrate-slider,
 div#toolbar > div.r > div.flagrate-slider,
 div#toolbar > div.g > div.flagrate-slider,
@@ -165,6 +168,7 @@ div#toolbar > div.b > div.flagrate-slider {
 	overflow: hidden;
 }
 div#toolbar > div.size > div.flagrate-slider > div,
+div#toolbar > div.stabilize > div.flagrate-slider > div,
 div#toolbar > div.alpha > div.flagrate-slider > div,
 div#toolbar > div.r > div.flagrate-slider > div,
 div#toolbar > div.g > div.flagrate-slider > div,
@@ -172,6 +176,7 @@ div#toolbar > div.b > div.flagrate-slider > div {
 	background-color: #c0c0c0;
 }
 div#toolbar > div.size > div.flagrate-slider > div::after,
+div#toolbar > div.stabilize > div.flagrate-slider > div::after,
 div#toolbar > div.alpha > div.flagrate-slider > div::after,
 div#toolbar > div.r > div.flagrate-slider > div::after,
 div#toolbar > div.g > div.flagrate-slider > div::after,
