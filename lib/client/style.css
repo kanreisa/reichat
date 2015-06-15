@@ -123,6 +123,7 @@ div#toolbar > div.tools > button {
 	word-break: break-all;
 	line-height: 13px;
 	text-align: left;
+	background-size: 35px 35px;
 	background-color: transparent;
 	background-position: center center;
 	overflow: hidden;
