@@ -472,12 +472,3 @@ div#chat > div#commands > button.exit {
 	right: 2px;
 	width: 141px;
 }
-object#wacom {
-	z-index: 2;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 1px;
-	height: 1px;
-	overflow: hidden;
-}
