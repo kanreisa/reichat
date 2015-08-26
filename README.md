@@ -38,17 +38,25 @@ Note: They are synchronized using Redis!
 
 #### Designed for
 
-* Pen Devices (**pressure/eraser supported**)
-* Internet Explorer 11
-* Google Chrome 40
-* Mozilla Firefox 36
+* Pen Device (**pressure/eraser supported**)
+ * Wacom Cintiq
+ * Wacom Intuos
+ * Wacom feel IT
+ * Microsoft Surface Pen (Surface Pro 3 / Surface 3)
+ * Microsoft Pro Pen (Surface Pro / Surface Pro 2)
+* Windows 8.1
+ * Internet Explorer 11
+* Windows 10
+ * Microsoft Edge
+* Mac OS X Yosemite (10.10)
+ * Google Chrome 44
+ * Mozilla Firefox 40
 
 #### Powered by
 
 * [Node.js](http://nodejs.org/)
-* [Pointer Events](http://www.w3.org/TR/pointerevents/) (for Internet Explorer 11) see [here](https://msdn.microsoft.com/en-us/library/ie/dn433244(v=vs.85).aspx) 
+* [Pointer Events](http://www.w3.org/TR/pointerevents/) (for Internet Explorer 11) see [here](https://msdn.microsoft.com/en-us/library/ie/dn433244(v=vs.85).aspx)
 * [PEP](https://github.com/jquery/PEP) (Pointer Events Polyfill) see [here](https://msopentech.com/blog/2014/12/17/jquery-adopts-pointer-events/)
-* [Wacom WebPlugin](http://www.wacomeng.com/web/)
 * [HTML Canvas 2D Context](http://www.w3.org/TR/2dcontext/)
 * [Flagrate](https://flagrate.org/)
 
@@ -58,7 +66,7 @@ Note: They are synchronized using Redis!
 $ npm install --global reichat
 ```
 
-### if Azure Websites
+### Case: Azure Websites
 
 [![Deploy to Azure](https://azuredeploy.net/deploybutton.png?_nonce=1425633252963)](https://azuredeploy.net/?repository=https://github.com/kanreisa/reichat)
 
@@ -70,7 +78,7 @@ $ npm install --global reichat
 4. repository url is `https://github.com/kanreisa/reichat.git`.
 5. done.
 
-### if Heroku
+### Case: Heroku
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
@@ -80,7 +88,7 @@ $ npm install --global reichat
 $ npm update --global reichat
 ```
 
-### if Azure Websites
+### Case: Azure Websites
 
 1. open your Websites Dashboard on Portal.
 2. go to the **DEPLOYMENTS**.
@@ -94,7 +102,7 @@ $ reichat --port 10133 --title "Example PaintChat Room"
 $ reichat --version
 $ reichat --help
 ```
-### if Azure Websites / Heroku
+### Case: Azure Websites / Heroku
 
 commands don't needed. it works automatically.
 
@@ -147,6 +155,12 @@ if in trusted proxy you can use this option for logging.
 * /layers/0
 * /layers/1
 * /layers/2
+
+## Frequency Asked Questions
+
+#### Pen Pressure ?
+* Currently, Pen Pressure supported on Windows.
+* Please use Microsoft Edge or Internet Explorer 11.
 
 ## License
 

@@ -3,32 +3,32 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Language" content="en, ja">
-	
+
 	<title>reichat</title>
-	
+
 	<meta name="robots" content="follow,noindex,noarchive">
-	
+
 	<script src="//flagrate.org/flagrate.min.js"></script>
-	
+
 	<link href="style.css" rel="stylesheet">
 	<script type="text/javascript" src="l10n.js"></script>
 	<link rel="shortcut icon" type="image/png" href="favicon.png">
-	
+
 	<script>
 		window.addEventListener('DOMContentLoaded', function () {
-			
+
 			var xhr = new XMLHttpRequest();
 			xhr.open('GET', '/config');
 			xhr.onreadystatechange = function () {
-				
+
 				if (xhr.readyState === 4) {
 					var config = JSON.parse(xhr.responseText);
-					
+
 					document.title = config.title + ' - reichat';
 					flagrate.Element.extend(document.getElementById('title')).updateText(config.title);
 					flagrate.Element.extend(document.getElementById('client-version')).updateText(config.version.client);
 					flagrate.Element.extend(document.getElementById('server-version')).updateText(config.version.server);
-					
+
 					localStorage.setItem('enter', 'yes');
 				}
 			};
@@ -62,21 +62,21 @@
 				<span lang="ja">お使いのブラウザはサポートされていません</span>
 			</a>
 			<![endif]-->
-			
+
 			<p lang="en">
 				Designed for Pen Devices
 			</p>
 			<p lang="ja">
-				ペン入力がおすすめです
+				ペンデバイス向けに設計されています
 			</p>
 		</div>
-		
+
 		<footer>
 			<p lang="en">
-				Designed for Internet Explorer 11 / Google Chrome 40 / Firefox 35 - <a href="https://github.com/kanreisa/reichat/issues/new" target="_blank">Send feedback</a>
+				Designed for Microsoft Edge / Internet Explorer 11 - <a href="https://github.com/kanreisa/reichat/issues/new" target="_blank">Send feedback</a>
 			</p>
 			<p lang="ja">
-				Internet Explorer 11 / Google Chrome 40 / Firefox 35 向けに設計されています - <a href="https://github.com/kanreisa/reichat/issues/new" target="_blank">フィードバックを送信</a>
+				Microsoft Edge / Internet Explorer 11 とペンデバイス向けに設計されています - <a href="https://github.com/kanreisa/reichat/issues/new" target="_blank">フィードバックを送信</a>
 			</p>
 			<p>Powered by reichat/<span id="client-version">?</span> (server/<span id="server-version">?</span>)</p>
 			<p>
