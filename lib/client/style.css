@@ -129,7 +129,7 @@ div#toolbar > div.tools > button {
 	overflow: hidden;
 }
 div#toolbar > div.tools > button.selected {
-	background-color: #fff;
+	background-color: #f5cc98;
 }
 div#toolbar > div.size,
 div#toolbar > div.stabilize,
@@ -208,7 +208,7 @@ div#toolbar > button {
 	margin: 8px 4px;
 	padding: 0;
 	display: block;
-	width: 71px;
+	width: calc(100% - 8px);
 	height: 20px;
 	border: 1px solid #c0c0c0;
 	box-shadow: inset 0 0 0 1px #fff;
@@ -237,6 +237,7 @@ div#toolbar > div.layer-buttons > button {
 	word-break: break-all;
 	line-height: 13px;
 	text-align: left;
+	text-shadow: -1px -1px 1px #fff, 1px 1px 1px #fff, -1px 1px 1px #fff, 1px -1px 1px #fff;
 	background-color: #ddd;
 	background-position: center center;
 	background-size: cover;
@@ -244,6 +245,8 @@ div#toolbar > div.layer-buttons > button {
 }
 div#toolbar > div.layer-buttons > button.selected {
 	background-color: #fff;
+	color: #e7962d;
+	font-weight: bold;
 }
 div#paint {
 	z-index: 1;
@@ -361,6 +364,33 @@ div#paint > div.ui-scroll#scroll-y > div {
 	right: 0;
 	left: 0;
 	height: 100px;
+}
+@media screen and (max-height: 730px) {
+	div#toolbar {
+		width: 120px;
+	}
+	div#toolbar > div.tools > button {
+		width: calc(100% / 3 - 5px);
+	}
+	div#paint {
+		left: 120px;
+	}
+}
+@media screen and (max-height: 635px) {
+	div#toolbar {
+		width: 160px;
+	}
+	div#toolbar > div.tools > button {
+		width: calc(100% / 4 - 5px);
+	}
+	div#paint {
+		left: 160px;
+	}
+	div#toolbar > div.layer-buttons > button {
+		display: inline-block;
+		width: calc(100% / 2 - 4px);
+		margin-right: 3px;
+	}
 }
 div#chat {
 	z-index: 1;
