@@ -1,6 +1,6 @@
 {
   "name": "reichat",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "description": "A lovely paint chat application like a PaintChatApp built with Node.",
   "scripts": {
     "start": "./bin/reichat.js",
@@ -32,7 +32,7 @@
   "license": "MIT",
   "dependencies": {
     "opts": "^1.2.2",
-    "reichat-server": "^1.0.3"
+    "reichat-server": "^1.0.4"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
