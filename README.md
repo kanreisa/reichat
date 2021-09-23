@@ -1,4 +1,4 @@
-[![reichat][Logo]](https://github.com/kanreisa/reichat)
+[![reichat][logo-img]](https://github.com/kanreisa/reichat)
 
 A lovely paint chat application like a [PaintChatApp](http://hp.vector.co.jp/authors/VA016309/paintchat/download.html) built with [Node](https://nodejs.org/).
 
@@ -166,8 +166,6 @@ if in trusted proxy you can use this option for logging.
 
 [MIT](LICENSE)
 
-![Logo](https://gist.githubusercontent.com/kanreisa/b701653782997edc5c84a840bea6cbb6/raw/ddbd91d5fb9618873f33de3f2a816cc154b848ad/reichat-logo.svg)
-
 [npm-img]: https://img.shields.io/npm/v/reichat.svg
 [npm-url]: https://npmjs.org/package/reichat
 [travis-img]: https://img.shields.io/travis/kanreisa/reichat.svg
@@ -178,3 +176,5 @@ if in trusted proxy you can use this option for logging.
 [dep-url]: https://david-dm.org/kanreisa/reichat
 [devdep-img]: https://david-dm.org/kanreisa/reichat/dev-status.svg
 [devdep-url]: https://david-dm.org/kanreisa/reichat#info=devDependencies
+
+[logo-img]: https://gist.githubusercontent.com/kanreisa/b701653782997edc5c84a840bea6cbb6/raw/ddbd91d5fb9618873f33de3f2a816cc154b848ad/reichat-logo.svg
