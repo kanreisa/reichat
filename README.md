@@ -1,4 +1,4 @@
-[![reichat](https://yabumi.cc/14bc26704ec04392c1627b2a.svg)](https://github.com/kanreisa/reichat)
+[![reichat][Logo]](https://github.com/kanreisa/reichat)
 
 A lovely paint chat application like a [PaintChatApp](http://hp.vector.co.jp/authors/VA016309/paintchat/download.html) built with [Node](https://nodejs.org/).
 
@@ -22,7 +22,7 @@ Note: They are synchronized using Redis!
 
 #### Screenshot
 
-![](https://yabumi.cc/14b8d9ec1e1979afb2215b23.png)
+![](https://user-images.githubusercontent.com/172910/134461368-b513322c-e470-42fe-a281-fca4242a4aa5.png)
 
 #### Features
 
@@ -166,7 +166,7 @@ if in trusted proxy you can use this option for logging.
 
 [MIT](LICENSE)
 
-![Logo](https://yabumi.cc/14b08e54b51e2abe7c7a55c7.svg)
+![Logo](https://gist.githubusercontent.com/kanreisa/b701653782997edc5c84a840bea6cbb6/raw/ddbd91d5fb9618873f33de3f2a816cc154b848ad/reichat-logo.svg)
 
 [npm-img]: https://img.shields.io/npm/v/reichat.svg
 [npm-url]: https://npmjs.org/package/reichat
